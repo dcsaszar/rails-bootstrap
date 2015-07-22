@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Rails Bootstrap" %></title>
+    <%= scrivito_head_tags %>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Bootstrap" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -16,5 +17,6 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <%= scrivito_body_tags %>
   </body>
 </html>
