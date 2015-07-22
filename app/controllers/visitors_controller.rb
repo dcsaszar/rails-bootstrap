@@ -1,2 +1,2 @@
-class VisitorsController < ApplicationController
+class VisitorsController < CmsController
 end
