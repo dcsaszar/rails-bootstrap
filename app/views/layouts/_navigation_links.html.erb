@@ -1,2 +1,11 @@
-<%# add navigation links to this file %>
-<li><%= link_to 'About', page_path('about') %></li>
+<div>
+  <%= scrivito_tag_list :ul, Obj.homepage, :toclist, class: "nav navbar-nav" do |list, page| %>
+    <%= list.tag :li do %>
+      <%= link_to page.display_title, scrivito_path(page) %>
+    <% end %>
+  <% end %>
+
+  <% if Obj.homepage.toclist.empty? && scrivito_in_editable_view? %>
+    <p>(Hint: Click on the Scrivito icon to the right to create the first subpage.)</p>
+  <% end %>
+</div>
